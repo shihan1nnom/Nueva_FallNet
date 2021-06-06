@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Prueba Falabella!</title>
+</head>
+<body>
+    <div style="padding: 40px">
+        <div class="input-group">
+            <input type="text" class="form-control" id="buscar">
+            <button class="btn btn-outline-primary" type="button" onClick="getCancelaciones();" style="width: 400px">Buscar</button>
+        </div>
+        <div class="row">
+            <div class="col">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">CC</th>
+                            <th scope="col">OC</th>
+                            <th scope="col">F12</th>
+                            <th scope="col">SKU</th>
+                            <th scope="col">Nº Entrega</th>
+                            <th scope="col">Comentario</th>
+                            <th scope="col">Estado F12</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody id="resultados"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/site.js" asp-append-version="true"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
