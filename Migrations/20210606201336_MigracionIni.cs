@@ -40,23 +40,23 @@ namespace PruebaFall.Migrations
                     estado_linea = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
                     estado_orden_oms = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
                     estado_cd = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
-                    DatoId = table.Column<long>(type: "INTEGER", nullable: false)
+                    _f12Id = table.Column<long>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Cancelaciones", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Cancelaciones_Datos_DatoId",
-                        column: x => x.DatoId,
+                        name: "FK_Cancelaciones_Datos__f12Id",
+                        column: x => x._f12Id,
                         principalTable: "Datos",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Cancelaciones_DatoId",
+                name: "IX_Cancelaciones__f12Id",
                 table: "Cancelaciones",
-                column: "DatoId");
+                column: "_f12Id");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

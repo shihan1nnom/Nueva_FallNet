@@ -32,7 +32,5 @@ namespace PruebaFall.Model
         [DataType(DataType.Text)]
         public string estado { get; set; }
 
-        public List<Cancelacion> Cancelaciones { get; set; }
-
     }
 }

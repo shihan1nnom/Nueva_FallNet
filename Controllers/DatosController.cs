@@ -22,13 +22,13 @@ namespace PruebaFall.Controllers
 
         // GET: api/Datos
         [HttpGet]
-        public IQueryable GetDatos(string buscar)
+        public IQueryable GetDatos()
         {
             var datos =  _context.Datos;
             var cancelaciones = _context.Cancelaciones;
-            var consulta = from cancelacion in cancelaciones
-                join dato in datos on cancelacion.DatoId !equals dato.Id
-                where cancelacion.f12 == dato.f12
+            var consulta = from dato in datos
+                join cancelacion in cancelaciones on dato equals cancelacion._f12
+                //where cancelacion.f12 == dato.f12
                 select new { cc = dato.cc, oc = cancelacion.oc, f12 = cancelacion.f12, sku = dato.sku, n_entrega = "X", comentario = "Cancelacion", estadof12 = "Y" };
             return consulta;
         }

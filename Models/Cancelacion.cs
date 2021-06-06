@@ -55,9 +55,6 @@ namespace PruebaFall.Model
         [DataType(DataType.Text)]
         public string estado_cd { get; set; }
 
-        [ForeignKey("Dato")]
-        public long DatoId { get; set; }
-
-        public Dato Dato { get; set; }
+        public Dato _f12 { get; set; }
     }
 }

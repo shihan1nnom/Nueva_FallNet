@@ -11,10 +11,7 @@ namespace PruebaFall.Model
 
         protected override void OnModelCreating(ModelBuilder modelbuilder)
         {
-            modelbuilder.Entity<Cancelacion>()
-                .HasOne(c => c.Dato)
-                .WithMany(d => d.Cancelaciones)
-                .HasForeignKey(c => c.DatoId);
+            base.OnModelCreating(modelbuilder);
         }
     }
 }

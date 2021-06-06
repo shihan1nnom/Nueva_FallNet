@@ -20,14 +20,9 @@ namespace PruebaFall.Controllers
 
         // GET: api/Cancelaciones
         [HttpGet]
-        public IEnumerable<List<Dato>> GetCancelaciones()
+        public async Task<ActionResult<IEnumerable<Cancelacion>>> GetCancelaciones()
         {
-            List<Dato> datos = new List<Dato>();
-            List<Cancelacion> cancelaciones = new List<Cancelacion>();
-            var consulta = from dato in datos
-                join cancelacion in cancelaciones on dato.Id equals cancelacion.DatoId
-                select datos;
-            return consulta;
+            return await _context.Cancelaciones.ToListAsync();
         }
 
         // GET: api/Cancelaciones/5
