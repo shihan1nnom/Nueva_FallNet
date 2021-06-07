@@ -20,7 +20,12 @@ function _vercancelacion(data) {
             tbody.appendChild(tr1);
 
             let td1 = document.createElement('td');
-            td1.textContent = r.cc;
+            if(r.cc){
+                td1.textContent = r.cc;
+            }
+            else{
+                td1.textContent = "-";
+            }
             tr1.appendChild(td1);
 
             let td2 = document.createElement('td');
@@ -32,7 +37,12 @@ function _vercancelacion(data) {
             tr1.appendChild(td3);
 
             let td4 = document.createElement('td');
-            td4.textContent = r.sku;
+            if(r.cc){
+                td4.textContent = r.sku;
+            }
+            else{
+                td4.textContent = "-";
+            }
             tr1.appendChild(td4);
 
             let td5 = document.createElement('td');
@@ -40,7 +50,12 @@ function _vercancelacion(data) {
             tr1.appendChild(td5);
 
             let td6 = document.createElement('td');
-            td6.textContent = r.comentario;
+            if(r.cc){
+                td6.textContent = "Cancelacion";
+            }
+            else{
+                td6.textContent = "-";
+            }
             tr1.appendChild(td6);
 
             let td7 = document.createElement('td');

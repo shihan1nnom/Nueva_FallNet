@@ -26,10 +26,9 @@ namespace PruebaFall.Controllers
         {
             var datos =  _context.Datos;
             var cancelaciones = _context.Cancelaciones;
-            var consulta = from dato in datos
-                join cancelacion in cancelaciones on dato equals cancelacion._f12
+            var consulta = from c in cancelaciones
                 //where cancelacion.f12 == dato.f12
-                select new { cc = dato.cc, oc = cancelacion.oc, f12 = cancelacion.f12, sku = dato.sku, n_entrega = "X", comentario = "Cancelacion", estadof12 = "Y" };
+                select new { cc = c._f12.cc, oc = c.oc, f12 = c.f12, sku = c._f12.sku, n_entrega = "X", comentario = "Cancelacion", estadof12 = "Y" };
             return consulta;
         }
 
